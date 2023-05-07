@@ -20,6 +20,7 @@ public class AreaController {
     @FXML
     private Label result1;
 
+    // Формула розрахунку площі трикутника
     private String calculate() {
         double A = Double.parseDouble(a.getText());
         double B = Double.parseDouble(b.getText());
@@ -33,16 +34,19 @@ public class AreaController {
         }
     }
 
+    // Формула розрахунку площі кола
     private String calculate1() {
         double r = Double.parseDouble(R.getText());
         return String.valueOf(Math.pow(r, 2) * Math.PI);
     }
 
+    // Формула виведення результатів обчислення площі трикутника
     @FXML
     protected void onButton1Click() {
         result.setText(calculate());
     }
 
+    // Формула виведення результатів обчислення площі кола
     @FXML
     protected void onButton2Click() {
         result1.setText(calculate1());

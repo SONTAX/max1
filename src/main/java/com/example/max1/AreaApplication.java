@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class AreaApplication extends Application {
+    // Функція завантаження форми
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AreaApplication.class.getResource("area-view.fxml"));
@@ -17,6 +18,7 @@ public class AreaApplication extends Application {
         stage.show();
     }
 
+    // Функція запуску програми
     public static void main(String[] args) {
         launch();
     }
