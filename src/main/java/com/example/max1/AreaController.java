@@ -16,6 +16,8 @@ public class AreaController {
     @FXML
     private TextField R;
     @FXML
+    private TextField H;
+    @FXML
     private Label result;
     @FXML
     private Label result1;
@@ -34,10 +36,17 @@ public class AreaController {
         }
     }
 
-    // Формула розрахунку площі кола
+    // Формула розрахунку площы повної поверхні циліндра
     private String calculate1() {
         double r = Double.parseDouble(R.getText());
-        return String.valueOf(Math.pow(r, 2) * Math.PI);
+        double h = Double.parseDouble(H.getText());
+        if ((r <= 0) || (h <= 0)) {
+            return "Невірно введені дані!";
+        } else {
+            double sb = 2 * Math.PI * r * h;
+            double so = Math.PI * Math.pow(r, 2);
+            return String.valueOf(sb + 2 * so);
+        }
     }
 
     // Формула виведення результатів обчислення площі трикутника
